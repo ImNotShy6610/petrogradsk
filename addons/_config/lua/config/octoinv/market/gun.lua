@@ -1,6 +1,6 @@
 do return end
 
-local minTime = 5 * 60 * 60
+local minTime = 1 * 60
 
 -- ammo
 octoinv.registerMarketItem('cat_ammo', {
@@ -19,7 +19,7 @@ local function registerAmmo(id, name, icon)
 			return item.class == 'ammo' and item.ammotype == id
 		end,
 		canBuy = function(ply, order)
-			return CFG.dev or ply:GetTimeTotal() >= minTime, 'Оружие можно покупать только наиграв на сервере 5 часов'
+			return CFG.dev or ply:GetTimeTotal() >= minTime, 'Оружие можно покупать только наиграв на сервере 1 час'
 		end,
 	})
 end
